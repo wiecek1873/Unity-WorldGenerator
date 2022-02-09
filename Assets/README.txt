@@ -1,1 +1,0 @@
-¯eby u¿yæ tej paczki nale¿y w zak³adce z ustawieniami podpi¹æ wybrane tekstury. Reszta ustawieñ powinna pozwoliæ na wygnerowanie przyk³adowego terenu
