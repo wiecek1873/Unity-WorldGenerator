@@ -4,9 +4,8 @@ Generated world is pseudoinfinite and use multithreading to don't interrupt play
 
 Furthermore provide necessary tools to adjust world settings and save it for future use.
 
-![](docs/img/Preview.png)
+![](Docs/Preview.png)
 
 ## Description
-
 
 
