@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
-using System.Threading;
 
 public static class NoiseHandler
 {
@@ -15,6 +13,7 @@ public static class NoiseHandler
 		float maxAcquiredHeight = 0;
 		float a = 1;
 		float f = 1;
+
 		for (int i = 0; i < settings.Octaves; i++)
 		{
 			float offsetX = randomGenerator.Next(-212512, 212512) + settings.NoiseOffset.x + center.x;
@@ -24,8 +23,10 @@ public static class NoiseHandler
 			maxAcquiredHeight += a;
 			a *= settings.Persistance;
 		}
+
 		float maxHeight = float.MinValue;
 		float minHeight = float.MaxValue;
+
 		for (int y = 0; y < height; y++)
 		{
 			for (int x = 0; x < width; x++)
@@ -33,6 +34,7 @@ public static class NoiseHandler
 				a = 1;
 				f = 1;
 				float noiseValue = 0;
+
 				for (int i = 0; i < settings.Octaves; i++)
 				{
 					float sampleX = (x - width / 2f + offsets[i].x) / settings.Scale * f;
@@ -44,11 +46,14 @@ public static class NoiseHandler
 					a *= settings.Persistance;
 					f *= settings.Lacunarity;
 				}
+
 				if (noiseValue > maxHeight)
 					maxHeight = noiseValue;
 				if (noiseValue < minHeight)
 					minHeight = noiseValue;
+
 				map[x, y] = noiseValue;
+
 				if (settings.NormalizationMode == NormalizeMode.Global)
 				{
 					float settedHeight = (map[x, y] + 1) / (maxAcquiredHeight / 0.9f);

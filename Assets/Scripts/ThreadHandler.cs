@@ -5,17 +5,9 @@ using System.Threading;
 
 public class ThreadHandler : MonoBehaviour
 {
-	private void OnThreadEnd(Func<object> generateData, Action<object> callback)
-	{
-		object data = generateData();
-		lock (m_dataQueue) { m_dataQueue.Enqueue(new ThreadInfo(callback, data)); }
-	}
-	public static void RequestData(Func<object> generateData, Action<object> callback)
-	{
-		ThreadStart threadStart = delegate { instance.OnThreadEnd(generateData, callback); };
-		new Thread(threadStart).Start();
-	}
-
+	private static ThreadHandler instance;
+	private Queue<ThreadInfo> m_dataQueue = new Queue<ThreadInfo>();
+	
 	struct ThreadInfo
 	{
 		public readonly Action<object> Callback;
@@ -26,10 +18,18 @@ public class ThreadHandler : MonoBehaviour
 			InfoParameter = parameter;
 		}
 	}
-	static ThreadHandler instance;
 
-	private Queue<ThreadInfo> m_dataQueue = new Queue<ThreadInfo>();
+	public static void RequestData(Func<object> generateData, Action<object> callback)
+	{
+		ThreadStart threadStart = delegate { instance.OnThreadEnd(generateData, callback); };
+		new Thread(threadStart).Start();
+	}
 
+	private void OnThreadEnd(Func<object> generateData, Action<object> callback)
+	{
+		object data = generateData();
+		lock (m_dataQueue) { m_dataQueue.Enqueue(new ThreadInfo(callback, data)); }
+	}
 
 	private void Awake()
 	{
@@ -46,5 +46,4 @@ public class ThreadHandler : MonoBehaviour
 			threadInfo.Callback(threadInfo.InfoParameter);
 		}
 	}
-
 }

@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
-using System.Threading;
-
 
 class LevelOfDetailMesh
 {
@@ -20,18 +17,18 @@ class LevelOfDetailMesh
 		m_lod = lod;
 	}
 
-	void OnMeshDataReceived(object meshDataObject)
+	public void RequestMesh(HeightMap heightMap, MeshSettings meshSettings)
+	{
+		HasRequestedMesh = true;
+		ThreadHandler.RequestData(() => MeshGenerationHandler.CreateTerrainMesh(heightMap.values, meshSettings, m_lod), OnMeshDataReceived);
+	}
+
+	private void OnMeshDataReceived(object meshDataObject)
 	{
 		m_mesh = ((MeshThreadable)meshDataObject).CreateMesh();
 		HasMesh = true;
 
 		UpdateCallback();
-	}
-
-	public void RequestMesh(HeightMap heightMap, MeshSettings meshSettings)
-	{
-		HasRequestedMesh = true;
-		ThreadHandler.RequestData(() => MeshGenerationHandler.CreateTerrainMesh(heightMap.values, meshSettings, m_lod), OnMeshDataReceived);
 	}
 }
 
@@ -97,16 +94,12 @@ public class Chunk
 		}
 		m_maxViewDst = lodS[lodS.Length - 1].VisibleDistanceThreshold;
 	}
-	void OnHeightMapReceived(object heightMapObject)
-	{
-		m_heightMap = (HeightMap)heightMapObject;
-		m_heightMapReceived = true;
-		UpdateTerrainChunk();
-	}
+
 	public void Load()
 	{
 		ThreadHandler.RequestData(() => HeightMapGenerator.GenerateHeightMap(m_meshSettings.NumberOfVertices, m_meshSettings.NumberOfVertices, m_heightMapSettings, m_sampleCenter), OnHeightMapReceived);
 	}
+
 	public void UpdateColliderMesh()
 	{
 		if (!m_hasSetCollider)
@@ -168,5 +161,12 @@ public class Chunk
 	public void SetVisible(bool visible)
 	{
 		m_meshObject.SetActive(visible);
+	}
+
+	private void  OnHeightMapReceived(object heightMapObject)
+	{
+		m_heightMap = (HeightMap)heightMapObject;
+		m_heightMapReceived = true;
+		UpdateTerrainChunk();
 	}
 }

@@ -1,22 +1,17 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
-using System;
-using System.Threading;
-
+﻿using UnityEngine;
 
 public static class MeshGenerationHandler
 {
-
 	public struct Coordinates
 	{
 		public readonly int x;
 		public readonly int y;
+
 		public Coordinates(int x, int y)
 		{
 			this.x = x;
 			this.y = y;
 		}
-
 	}
 
 	public static MeshThreadable CreateTerrainMesh(float[,] heightArray, MeshSettings meshSettings, int lod)
@@ -28,6 +23,7 @@ public static class MeshGenerationHandler
 		int[,] vertex = new int[vertices, vertices];
 		int meshVertexInd = 0;
 		int outOfMeshVerex = -1;
+
 		for (int y = 0; y < vertices; y++)
 		{
 			for (int x = 0; x < vertices; x++)
@@ -78,8 +74,10 @@ public static class MeshGenerationHandler
 						ConnectionData edgeConnectionVertexData = new ConnectionData(vertexIndex, vertex[coordA.x, coordA.y], vertex[coordB.x, coordB.y], dstPercentFromAToB);
 						meshThreadable.SetConnection(edgeConnectionVertexData);
 					}
+
 					meshThreadable.SetVertex(new Vector3(position.x, height, position.y), difference, vertexIndex);
 					bool checkTriangle = x < vertices - 1 && y < vertices - 1 && (!edgeConection || (x != 2 && y != 2));
+
 					if (checkTriangle)
 					{
 						int currentIncrement = (mainEdge && x != vertices - 3 && y != vertices - 3) ? skip : 1;
@@ -94,6 +92,7 @@ public static class MeshGenerationHandler
 			}
 		}
 		meshThreadable.RecalculateMesh();
+
 		return meshThreadable;
 	}
 }
@@ -103,6 +102,7 @@ public class ConnectionData
 	public int mainVertexAIndex;
 	public int mainVertexBIndex;
 	public float distance;
+
 	public ConnectionData(int vertexIndex, int mainVertexAIndex, int mainVertexBIndex, float distance)
 	{
 		this.vertexIndex = vertexIndex;
@@ -124,6 +124,7 @@ public class MeshThreadable
 	private ConnectionData[] m_edgeConnectionVertices;
 	private int m_edgeConnectionVertexIndex;
 	private bool m_useFlatShading;
+
 	public MeshThreadable(int vertices, int increments, bool flatShading)
 	{
 		m_useFlatShading = flatShading;
@@ -144,6 +145,7 @@ public class MeshThreadable
 		m_outOfMeshVertices = new Vector3[vertices * 4 - 4];
 		m_outOfMeshTriangles = new int[24 * (vertices - 2)];
 	}
+
 	public Mesh CreateMesh()
 	{
 		Mesh mesh = new Mesh
@@ -152,12 +154,15 @@ public class MeshThreadable
 			triangles = m_triangles,
 			uv = m_uvs
 		};
+
 		if (m_useFlatShading)
 			mesh.RecalculateNormals();
 		else
 			mesh.normals = m_bakedNormals;
+
 		return mesh;
 	}
+
 	public void SetVertex(Vector3 position, Vector2 uv, int index)
 	{
 		if (index < 0)
@@ -168,11 +173,13 @@ public class MeshThreadable
 			m_uvs[index] = uv;
 		}
 	}
+
 	public void SetConnection(ConnectionData edgeConnectionVertexData)
 	{
 		m_edgeConnectionVertices[m_edgeConnectionVertexIndex] = edgeConnectionVertexData;
 		m_edgeConnectionVertexIndex++;
 	}
+
 	public void SetTriangle(int a, int b, int c)
 	{
 		if (a < 0 || b < 0 || c < 0)
@@ -190,19 +197,7 @@ public class MeshThreadable
 			m_triangleIndex += 3;
 		}
 	}
-	private void FlatShading()
-	{
-		Vector3[] flatShadedVertices = new Vector3[m_triangles.Length];
-		Vector2[] flatShadedUvs = new Vector2[m_triangles.Length];
-		for (int i = 0; i < m_triangles.Length; i++)
-		{
-			flatShadedVertices[i] = m_vertices[m_triangles[i]];
-			flatShadedUvs[i] = m_uvs[m_triangles[i]];
-			m_triangles[i] = i;
-		}
-		m_vertices = flatShadedVertices;
-		m_uvs = flatShadedUvs;
-	}
+
 	public void RecalculateMesh()
 	{
 		if (m_useFlatShading)
@@ -213,14 +208,33 @@ public class MeshThreadable
 			CheckEdges();
 		}
 	}
+
+	private void FlatShading()
+	{
+		Vector3[] flatShadedVertices = new Vector3[m_triangles.Length];
+		Vector2[] flatShadedUvs = new Vector2[m_triangles.Length];
+
+		for (int i = 0; i < m_triangles.Length; i++)
+		{
+			flatShadedVertices[i] = m_vertices[m_triangles[i]];
+			flatShadedUvs[i] = m_uvs[m_triangles[i]];
+			m_triangles[i] = i;
+		}
+
+		m_vertices = flatShadedVertices;
+		m_uvs = flatShadedUvs;
+	}
+
 	private void BakeNormals()
 	{
 		m_bakedNormals = CalculateNormals();
 	}
+
 	private Vector3[] CalculateNormals()
 	{
 		Vector3[] vertexNormals = new Vector3[m_vertices.Length];
 		int triangleCount = m_triangles.Length / 3;
+
 		for (int i = 0; i < triangleCount; i++)
 		{
 			int normalTriangleIndex = i * 3;
@@ -235,6 +249,7 @@ public class MeshThreadable
 		}
 
 		int borderTriangleCount = m_outOfMeshTriangles.Length / 3;
+
 		for (int i = 0; i < borderTriangleCount; i++)
 		{
 			int normalTriangleIndex = i * 3;
@@ -256,6 +271,7 @@ public class MeshThreadable
 
 		for (int i = 0; i < vertexNormals.Length; i++)
 			vertexNormals[i].Normalize();
+
 		return vertexNormals;
 	}
 
