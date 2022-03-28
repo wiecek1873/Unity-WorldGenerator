@@ -18,4 +18,5 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 ## Level of detail
 Two different LOD settings on the same chunk of terrain.
 | Max         | Min |
+|----------------|---------------|
 | ![](Docs/LODMax.png)  | ![](Docs/LODMin.png)  
