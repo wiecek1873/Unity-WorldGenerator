@@ -19,4 +19,9 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 Two different LOD settings on the same chunk of terrain.
 | Max         | Min |
 |----------------|---------------|
-| ![](Docs/LODMax.png)  | ![](Docs/LODMin.png)  
+| ![](Docs/LODMax.png)  | ![](Docs/LODMin.png)
+
+
+## Installation
+* Require Unity 2020.3.2f1 (or higher). Should work on older versions too.
+* Fork this repository and use example scene.
