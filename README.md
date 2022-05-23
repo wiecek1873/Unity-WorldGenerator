@@ -8,22 +8,22 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 
 # Main features
   - [Preview mode](#Preview-mode)
-  - [Custom settings](#Custom-settings)
+  - [Height map settings](#Height-map-settings)
   - [Infinite](#Infinite)
-  - [Support physics system](#Support-physics-system)
+  - [Collisions](#Collisions)
   - [Level of detail settings](#Level-of-detail-settings)
   - [Multithreaded](#Multithreaded)
-  - [Falloff map support](#Falloff-map-support)
-  - [Procedural object placement](#Procedural-object-placement)
+  - [Falloff map](#Falloff-map)
+  - [Object placement](#Object placement)
   - [Installation](#Installation)
 
 ## Preview mode
 
-## Custom settings
+## Height map settings 
 
 ##Infinite
 
-##Support physics system
+##Collisions
 
 ##Level of detail settings
 Two different LOD settings on the same chunk of terrain.
@@ -33,11 +33,9 @@ Two different LOD settings on the same chunk of terrain.
 
 ## Multithreaded
 
-## Falloff map support
+## Falloff map
 
-## Procedural object placement
-
-## Level of detail
+## Object placement
 
 ## Installation
 * Require Unity 2020.3.2f1 (or higher). Should work on older versions too.
