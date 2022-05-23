@@ -26,31 +26,38 @@ Preview mode allow to peek how generated world will look like. You can peek at m
 
 ## Height map settings 
 Possibility to change all parameters related to height map.
+
 ![](Docs/HeightMapSettings.gif)
 
 ## Mesh settings
 Possibility to change all parameters related to mesh.
+
 ![](Docs/MeshSettings.gif)
 
 ## Texture settings
 Possibility to use custom textures and adjust them.
+
 ![](Docs/TextureSettings.gif)
 
 ## Infinite
 Terrain in generated on demand as player is moving.
+
 ![](Docs/Infinite.gif)
 
 ## Collisions
 Collisions based on mesh collider.
+
 ![](Docs/Collisions.gif)
 
 ## Level of detail
 Level of detail changed chunks based on distance from player.
+
 ![](Docs/LevelOfDetail.gif)
 ![](Docs/LevelOfDetail1.gif)
 
 ## Multithreaded
 Mesh generation is done on separate thread to do not interrupt gameplay.
+
 
 ## Falloff map
 ![](Docs/FalloffMap.gif)
