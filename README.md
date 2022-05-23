@@ -10,6 +10,7 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
   - [Preview mode](#Preview-mode)
   - [Height map settings](#Height-map-settings)
   - [Mesh settings](#Mesh-settings)
+  - [Texture settings](#Texture-settings)
   - [Infinite](#Infinite)
   - [Collisions](#Collisions)
   - [Level of detail settings](#Level-of-detail-settings)
@@ -23,23 +24,21 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 ## Height map settings 
 ![](Docs/HeightMapSettings.gif)
 ## Mesh settings
-
+![](Docs/MeshSettings.gif)
+## Texture settings
+![](Docs/TextureSettings.gif)
 ##Infinite
-
+![](Docs/Infinite.gif)
 ##Collisions
-
-##Level of detail settings
-Two different LOD settings on the same chunk of terrain.
-| Max         | Min |
-|----------------|---------------|
-| ![](Docs/LODMax.png)  | ![](Docs/LODMin.png)
-
+![](Docs/Collisions.gif)
+##Level of detail
+![](Docs/LevelOfDetail.gif)
 ## Multithreaded
-
+![](Docs/Multithreaded.gif)
 ## Falloff map
-
+![](Docs/FalloffMap.gif)
 ## Object placement
-
+![](Docs/ObjectPlacement.gif)
 ## Installation
 * Require Unity 2020.3.2f1 (or higher). Should work on older versions too.
 * Fork this repository and use example scene.
