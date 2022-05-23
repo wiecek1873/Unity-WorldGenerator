@@ -21,7 +21,7 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 ## Preview mode
 ![](Docs/PreviewMode.gif)
 ## Height map settings 
-![](HeightMapSettings.gif)
+![](Docs/HeightMapSettings.gif)
 ## Mesh settings
 
 ##Infinite
