@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb49c415c73a941729b11c3076268f15, type: 3}
   m_Name: HeightMapSettings
   m_EditorClassIdentifier: 
-  AutoUpdate: 1
+  AutoUpdate: 0
   NoiseSettings:
-    NormalizeMode: 1
+    NormalizationMode: 1
     Scale: 50
     Octaves: 6
     Persistance: 0.6
     Lacunarity: 2
-    Seed: 0
-    Offset: {x: 0, y: 0}
+    RNGSeed: 0
+    NoiseOffset: {x: 0, y: 0}
   UseFalloff: 0
   HeightMultiplier: 50
   HeightCurve:
@@ -36,7 +36,16 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.21946654
+      time: 0.08835222
+      value: 0.09016222
+      inSlope: 2.030804
+      outSlope: 2.030804
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.21816954
       value: 0.2872514
       inSlope: 0.23097038
       outSlope: 0.23097038
@@ -44,6 +53,24 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.308343
+      value: 0.34904498
+      inSlope: 0.2778395
+      outSlope: 0.2778395
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.17834888
+    - serializedVersion: 3
+      time: 0.45816764
+      value: 0.35894576
+      inSlope: 0.14521486
+      outSlope: 0.14521486
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.26639804
     - serializedVersion: 3
       time: 0.7242992
       value: 0.7055397
