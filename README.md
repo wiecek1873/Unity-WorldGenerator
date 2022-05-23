@@ -15,7 +15,7 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
   - [Multithreaded](#Multithreaded)
   - [Falloff map support](#Falloff-map-support)
   - [Procedural object placement](#Procedural-object-placement)
-  - [Installation] (#Installation)
+  - [Installation](#Installation)
 
 ## Preview mode
 
