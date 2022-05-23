@@ -21,24 +21,34 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 
 ## Preview mode
 ![](Docs/PreviewMode.gif)
+
 ## Height map settings 
 ![](Docs/HeightMapSettings.gif)
+
 ## Mesh settings
 ![](Docs/MeshSettings.gif)
+
 ## Texture settings
 ![](Docs/TextureSettings.gif)
+
 ##Infinite
 ![](Docs/Infinite.gif)
+
 ##Collisions
 ![](Docs/Collisions.gif)
+
 ##Level of detail
 ![](Docs/LevelOfDetail.gif)
+
 ## Multithreaded
 ![](Docs/Multithreaded.gif)
+
 ## Falloff map
 ![](Docs/FalloffMap.gif)
+
 ## Object placement
 ![](Docs/ObjectPlacement.gif)
+
 ## Installation
 * Require Unity 2020.3.2f1 (or higher). Should work on older versions too.
 * Fork this repository and use example scene.
