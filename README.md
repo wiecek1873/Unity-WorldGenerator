@@ -21,6 +21,7 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 
 ## Preview mode
 Preview mode allow to peek how generated world will look like. You can peek at mesh or height map.
+
 ![](Docs/PreviewMode.gif)
 
 ## Height map settings 
