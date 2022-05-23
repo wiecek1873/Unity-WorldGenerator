@@ -9,17 +9,20 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 # Main features
   - [Preview mode](#Preview-mode)
   - [Height map settings](#Height-map-settings)
+  - [Mesh settings](#Mesh-settings)
   - [Infinite](#Infinite)
   - [Collisions](#Collisions)
   - [Level of detail settings](#Level-of-detail-settings)
   - [Multithreaded](#Multithreaded)
   - [Falloff map](#Falloff-map)
-  - [Object placement](#Object placement)
+  - [Object placement](#Object-placement)
   - [Installation](#Installation)
 
 ## Preview mode
-
+![](Docs/PreviewMode.gif)
 ## Height map settings 
+![](HeightMapSettings.gif)
+## Mesh settings
 
 ##Infinite
 
