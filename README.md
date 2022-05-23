@@ -39,6 +39,7 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 
 ## Level of detail
 ![](Docs/LevelOfDetail.gif)
+![](Docs/LevelOfDetail1.gif)
 
 ## Multithreaded
 ![](Docs/Multithreaded.gif)
