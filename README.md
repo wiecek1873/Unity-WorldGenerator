@@ -31,13 +31,13 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 ## Texture settings
 ![](Docs/TextureSettings.gif)
 
-##Infinite
+## Infinite
 ![](Docs/Infinite.gif)
 
-##Collisions
+## Collisions
 ![](Docs/Collisions.gif)
 
-##Level of detail
+## Level of detail
 ![](Docs/LevelOfDetail.gif)
 
 ## Multithreaded
