@@ -6,8 +6,9 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 
 ![](Docs/MainImage.png)
 
-## Main features
+# Main features
 - [x] Preview mode
+- [x] Custom settings
 - [x] Multithreaded
 - [x] Infinite
 - [x] Support physics system
@@ -15,7 +16,13 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 - [ ] Falloff map support
 - [ ] Procedural object placement
 
-# Preview mode
+## Preview mode
+
+## Multithreaded
+
+## Infinite
+
+## Support physics system
 
 ## Level of detail
 Two different LOD settings on the same chunk of terrain.
