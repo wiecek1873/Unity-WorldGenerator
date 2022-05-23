@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb49c415c73a941729b11c3076268f15, type: 3}
   m_Name: HeightMapSettings
   m_EditorClassIdentifier: 
-  AutoUpdate: 0
+  AutoUpdate: 1
   NoiseSettings:
     NormalizationMode: 1
     Scale: 50
