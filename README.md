@@ -7,23 +7,14 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
 ![](Docs/MainImage.png)
 
 # Main features
-  - [Preview mode](#table-of-contents)
-  - [Custom settings](#główne-funkcjonalności-aplikacji)
-  - [Infinite](#lista-pomysłów)
-  - [Support physics system](#authors)
-  - [Level of detail settings](#specification)
-  - [Multithreaded]()
-  - [Falloff map support]()
-  - [Procedural object placement]()
-
-- [x] Preview mode
-- [x] Custom settings
-- [x] Infinite
-- [x] Support physics system
-- [x] Level of detail settings
-- [x] Multithreaded
-- [ ] Falloff map support
-- [ ] Procedural object placement
+  - [Preview mode](#Preview-mode)
+  - [Custom settings](#Custom-settings)
+  - [Infinite](#Infinite)
+  - [Support physics system](#Support-physics-system)
+  - [Level of detail settings](#Level-of-detail-settings)
+  - [Multithreaded](#Multithreaded)
+  - [Falloff map support](#Falloff-map-support)
+  - [Procedural object placement](#Procedural-object-placement)
 
 ## Preview mode
 
