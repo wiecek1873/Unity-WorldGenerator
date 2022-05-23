@@ -15,21 +15,29 @@ Furthermore provide necessary tools to adjust world settings and save it for fut
   - [Multithreaded](#Multithreaded)
   - [Falloff map support](#Falloff-map-support)
   - [Procedural object placement](#Procedural-object-placement)
+  - [Installation] (#Installation)
 
 ## Preview mode
 
-## Multithreaded
+## Custom settings
 
-## Infinite
+##Infinite
 
-## Support physics system
+##Support physics system
 
-## Level of detail
+##Level of detail settings
 Two different LOD settings on the same chunk of terrain.
 | Max         | Min |
 |----------------|---------------|
 | ![](Docs/LODMax.png)  | ![](Docs/LODMin.png)
 
+## Multithreaded
+
+## Falloff map support
+
+## Procedural object placement
+
+## Level of detail
 
 ## Installation
 * Require Unity 2020.3.2f1 (or higher). Should work on older versions too.
