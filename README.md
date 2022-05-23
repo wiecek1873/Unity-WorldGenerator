@@ -40,7 +40,7 @@ Possibility to use custom textures and adjust them.
 ![](Docs/TextureSettings.gif)
 
 ## Infinite
-Terrain in generated on demand as player is moving.
+Terrain is generated on demand as player is moving.
 
 ![](Docs/Infinite.gif)
 
